@@ -1,0 +1,56 @@
+{% load static %}
+{% for section in section_list %}
+<div class="container card-container">
+  <div class="row justify-content-center itoms">
+    <!-- Карточка -->
+    <div class="col-12">
+      <div class="card card-big">
+        <div class="card-body">
+          <div class="row card-top card-top_big align-items-center justify-content-evenly">
+            <div class="col-3">
+              <!--<img src="{% static 'img/python.svg' %}" alt="Python" class="card-img card-img_big">-->
+              <i class='bx bxl-python card-img card-img_small'></i>
+            </div>
+            <div class="col-9">
+              <h5 class="card-title  card-title_big">{{ section.cms_titleCard }}</h5>
+              <h6 class="card-subtitle card-subtitle_big">
+                Возраст <span>{{ section.cms_age }}+</span>
+                <span class="card-level">{{ section.cms_level }}</span>
+              </h6>
+              <!-- <span class="card-name">Python</span> -->
+            </div>
+          </div>
+          <div class="card-features">
+            <h4 class="card-features_title">В программе:</h4>
+            <div class="card-features_list">
+              <ul>
+                <li class="card-features_list__group p-1">1-й пункт в программе обучения</li>
+                <li class="card-features_list__group p-1">2-й пункт в программе обучения</li>
+                <li class="card-features_list__group p-1">3-й пункт в программе обучения</li>
+                <li class="card-features_list__group p-1">4-й пункт в программе обучения</li>
+                <li class="card-features_list__group p-1">5-й пункт в программе обучения</li>
+                <li class="card-features_list__group p-1">6-й пункт в программе обучения</li>
+                <li class="card-features_list__group p-1">7-й пункт в программе обучения</li>
+                <li class="card-features_list__group p-1">8-й пункт в программе обучения</li>
+                <li class="card-features_list__group p-1">9-й пункт в программе обучения</li>
+                <li class="card-features_list__group p-1">10-й пункт в программе обучения</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-btn d-grid gap-2">
+            <a
+              href="#"
+              class="btn btn-outline-secondary card-btn-checkin"
+              data-bs-toggle="modal"
+              data-bs-target="#formCheckIn"
+            >
+              Записаться
+            </a>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}

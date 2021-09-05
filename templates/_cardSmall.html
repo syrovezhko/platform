@@ -1,0 +1,303 @@
+{% load static %}
+{% for section in section_list %}
+<style>
+  .card-small{{ section.id }} {
+    background-color: {{ section.cms_bgColor }}
+  }
+
+  .card-small{{ section.id }}:hover {
+    border: 2px {{ section.cms_bgColor }} solid;
+    color: {{ section.cms_сolor }};
+</style>
+<div class="col col-md-6 col-xs-12 col-lg-6 col-xl-4">
+  <div class="container card-container">
+    <div class="row justify-content-center itoms">
+      <!-- Карточка -->
+      <div class="col">
+        <div class="card card-small card-small{{ section.id }}" data-bs-toggle="modal" data-bs-target="#CardSmallModal_{{ section.id }}" type="button">
+          <div class="card-body">
+            <div class="row card-top d-flex card-top_small align-items-center justify-content-evenly">
+              <div class="col-3"><!-- 
+                <img src="img/python.svg" alt="Python" class="card-img card-img_small"> -->
+                <i class='{{ section.cms_iconCss }} card-img card-img_small'></i>
+              </div>
+              <div class="col-9 align-middle">
+                <h5 class="card-title card-title_small">{{ section.cms_titleCard }}</h5>
+                <h6 class="card-subtitle card-subtitle_small">
+                  Возраст <span>{{ section.cms_age }}+</span>
+                  <span class="card-level">{{ section.cms_level }}</span>
+                </h6>
+                <h4 class="card-name">Python</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+<!-- modal -->
+{% for section in section_list %}
+<div
+    class="modal fade" 
+    id="CardSmallModal_{{ section.id }}" 
+    tabindex="-1" 
+    aria-labelledby="CardSmallModal_{{ section.id }}" 
+    aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered  modal-dialog-scrollable modal-xl modal-fullscreen-lg-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="CardSmallModal_{{ section.id }}">{{ section.cms_titleModal }}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid modal-cv">
+          <div class="row justify-content-between modal-cv-header p-0">
+            <div class="col-xl-8 col-sm-8 order-sm-1 order-2 p-0 modal-cv-header_desc">
+              <div class="container p-0">
+                <div class="row justify-content-start">
+                  <div class="col-6 col-sm-7 col-md-6 col-xl-4 p-0">Срок обучения:</div>
+                  <div class="col-6 col-sm-5 col-md-6 col-xl-8 pb-1 pb-sm-0 section-data">
+                    {{ section.cms_termMonths }} мес. ({{ section.cms_termTimes }} урок(а))
+                  </div>
+                </div>
+                <div class="row justify-content-start">
+                  <div class="col-6 col-sm-7 col-md-6 col-xl-4 p-0">Регулярность:</div>
+                  <div class="col-6 col-sm-5 col-md-6 col-xl-8 pb-1 pb-sm-0 section-data">
+                    {{ section.cms_regularity }} в неделю
+                  </div>
+                </div>
+                <div class="row justify-content-start">
+                  <div class="col-6 col-sm-7 col-md-6 col-xl-4 p-0">Длительность:</div>
+                  <div class="col-6 col-sm-5 col-md-6 col-xl-8 pb-1 pb-sm-0 section-data">
+                    {{ section.cms_durationH }} ак.ч. ({{ section.cms_durationM }} мин.)
+                  </div>
+                </div>
+                <div class="row justify-content-start">
+                  <div class="col-6 col-sm-7 col-md-6 col-xl-4 p-0">В группе </div>
+                  <div class="col-6 col-sm-5 col-md-6 col-xl-8 pb-1 pb-sm-0 section-data">
+                    {{ section.cms_number }} человек
+                  </div>
+                </div>
+                <div class="row justify-content-start mt-4">
+                  <div class="col p-0 section-desc">
+                    <h5 class="section-desc_title">
+                      Общая информация
+                    </h5>
+                    <p class="section-desc_text">
+                      {{ section.cms_textDesc }}
+                    </p>
+                    <h5 class="section-desc_title">
+                      Декларируемый результат
+                    </h5>
+                    <p class="section-desc_effect">
+                      {{ section.cms_textResult }}
+                    </p>
+                    <h5 class="section-desc_title">
+                      Процесс обучения
+                    </h5>
+                    <p class="section-desc_effect">
+                      Обучение проходит исключительно в <span class="section-pay_text__span">дистанционном фомате.</span> 
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-sm-4 order-sm-2 order-1  modal-cv-header_profile mb-3">
+
+              <div class="container card-container">
+                <div class="row justify-content-center itoms">
+                  <!-- Карточка -->
+                  <div class="col-12">
+                    <div class="card card-big">
+                      <div class="card-body">
+                        <div class="row card-top card-top_big align-items-center justify-content-evenly">
+                          <div class="col-3">
+                            <!--<img src="{% static 'img/python.svg' %}" alt="Python" class="card-img card-img_big">-->
+                            <i class='bx bxl-python card-img card-img_small'></i>
+                          </div>
+                          <div class="col-9">
+                            <h5 class="card-title  card-title_big">{{ section.cms_titleCard }}</h5>
+                            <h6 class="card-subtitle card-subtitle_big">
+                              Возраст <span>{{ section.cms_age }}+</span>
+                              <span class="card-level">{{ section.cms_level }}</span>
+                            </h6>
+                            <!-- <span class="card-name">Python</span> -->
+                          </div>
+                        </div>
+                        <div class="card-features">
+                          <h4 class="card-features_title">В программе:</h4>
+                          <div class="card-features_list">
+                            <ul>
+                              <li class="card-features_list__group p-1">{{ section.cms_cardItom1}}</li>
+                              <li class="card-features_list__group p-1">{{ section.cms_cardItom2}}</li>
+                              <li class="card-features_list__group p-1">{{ section.cms_cardItom3}}</li>
+                              <li class="card-features_list__group p-1">{{ section.cms_cardItom4}}</li>
+                              <li class="card-features_list__group p-1">{{ section.cms_cardItom5}}</li>
+                              <li class="card-features_list__group p-1">{{ section.cms_cardItom6}}</li>
+                              <li class="card-features_list__group p-1">{{ section.cms_cardItom7}}</li>
+                              <li class="card-features_list__group p-1">{{ section.cms_cardItom8}}</li>
+                              <li class="card-features_list__group p-1">{{ section.cms_cardItom9}}</li>
+                              <li class="card-features_list__group p-1">{{ section.cms_cardItom10}}</li>
+
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="card-btn d-grid gap-2">
+                          <a
+                            href="#"
+                            class="btn btn-outline-secondary card-btn-checkin"
+                            data-bs-toggle="modal"
+                            data-bs-target="#formCheckIn"
+                          >
+                            Записаться
+                          </a>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="col modal-cv-header_stack p-0 order-3 section-pay">
+              <h5 class="p-0 section-pay_title">Оплата</h5>
+              <!-- <p class="section-pay_text">
+                Оплата принимается после заключения договора <span class="section-pay_text__span">перед началом занятий.</span> Учащиеся допускаются к занятиям <span class="section-pay_text__span">исключительо после оплаты.</span>                
+              </p> -->
+              <p class="p-0 section-pay_text">
+                Стоимость обучения складывается из расчета <span class="price">колличество уроков в месяц</span> Х <span class="price">стоимость одного занятия</span>
+              </p>
+              <div class="container p-0">
+                
+                <div class="row justify-content-start pb-4">
+                  <div class="col-9 col-lg-4 col-xs-4 col-sm-6 p-0">Одно занятияе стоит:</div>
+                  <div class="col-3 col-lg-8 col-xs-8 col-sm-6 p-0">
+                    {{ section.cms_payOnce }}
+                    <br>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-9 col-lg-4 col-xs-4 col-sm-6 p-0">{{ section.cms_payMonthName1 }}</div>
+                  <div class="col-3 col-lg-8 col-xs-8 col-sm-6 p-0">{{ section.cms_payMonth1 }}<br></div>
+                </div>
+                <div class="row">
+                  <div class="col-9 col-lg-4 col-xs-4 col-sm-6 p-0">{{ section.cms_payMonthName2 }}</div>
+                  <div class="col-3 col-lg-8 col-xs-8 col-sm-6 p-0">{{ section.cms_payMonth2 }}<br></div>
+                </div>
+                <div class="row">
+                  <div class="col-9 col-lg-4 col-xs-4 col-sm-6 p-0">{{ section.cms_payMonthName3 }}</div>
+                  <div class="col-3 col-lg-8 col-xs-8 col-sm-6 p-0">{{ section.cms_payMonth3 }}<br></div>
+                </div>
+                <div class="row">
+                  <div class="col-9 col-lg-4 col-xs-4 col-sm-6 p-0">{{ section.cms_payMonthName4 }}</div>
+                  <div class="col-3 col-lg-8 col-xs-8 col-sm-6 p-0">{{ section.cms_payMonth4 }}<br></div>
+                </div>
+
+                <div class="row mt-4">
+                  <div class="col-9 col-lg-4 col-xs-4 col-sm-6 p-0">Полная стоимость:</div>
+                  <div class="col-3 col-lg-8 col-xs-8 col-sm-6 p-0">
+                    {{ section.cms_payFull }}
+                    <br>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer modal_small">
+        <button type="button" class="btn btn-secondary modal-small_btn" data-bs-dismiss="modal">Закрыть</button>
+        <button type="button" class="btn btn-outline-secondary modal-small_btn">Уроки</button>
+        <button type="button" class="btn btn-secondary modal-small_btn" data-bs-dismiss="modal">Записаться </button>
+      </div>
+    </div>
+  </div>
+</div>     
+
+<!-- ModalFormCheckIn -->
+<div class="modal fade modal-formCheckIn" id="formCheckIn" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+    <form action="{% url 'thanks_page' %}" method="POST">
+      {% csrf_token %}
+      <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">{{ section.cms_titleModal }}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+            <div class="row">
+              <div class="col">
+                
+                  <div class="mb-3">
+                    <lable class="form-lable" for="disabledTextInput" aria-describedby="nameHelp"></lable>
+                    <input type="text" class="form-control" value="{{ section.cms_titleModal }}" name="section" id="disabledTextInput" readonly hidden>
+                  </div>
+               
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                
+                  <div class="mb-3">
+                    <lable class="form-lable" for="name" aria-describedby="nameHelp">Введите ФИО</lable>
+                    <input type="name" class="form-control" placeholder="Иванов Иван Иванович" name="name" id="name" required>
+                    <div class="form-text" id="nameHelp">родителя или законного представителя</div>
+                  </div>
+               
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                  <div class="mb-3">
+                    <lable class="form-lable" for="kname" aria-describedby="kname">Введите имя учащегося</lable>
+                    <input type="name" class="form-control" placeholder="Алексей" name="kname" id="kname" required>
+                  </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                  <div class="mb-3">
+                    <lable class="form-lable" for="age" aria-describedby="age">Введите возраст учащегося</lable>
+                    <input type="number" class="form-control" placeholder="10" name="number" id="age" required>
+                    <div class="form-text" id="nameHelp">Только цифру, например: "10"</div>
+                  </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                  <div class="mb-3">
+                    <lable class="form-lable" for="phone" aria-describedby="phone">Введите контатный телефон</lable>
+                    <input type="tel" class="form-control" placeholder="79852895574" name="phone" id="phone"  required>
+                    <div class="form-text" id="phoneHelp">Телефон должен быть привязан к WhatsApp.<br>Важно, номер телефона должен начинаться с цифры 7, БЕЗ знака "+"</div>
+                  </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="consent" required>
+                  <label class="form-check-label" for="consent">
+                    Согласие на обработку персональных данных в сооветствии с 152ФЗ
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- <button type="submit" class="btn btn-primary">Отправить</button>
+          </form> -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        <button type="submit" class="btn btn-primary">Отправить</button>
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
+{% endfor %}

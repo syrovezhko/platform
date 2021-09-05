@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<header>
+  
+  <nav class="navbar navbar-header navbar-expand-md navbar-light fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        Николай Сыровежко и коллеги
+        <br>
+        <span class="navbar-brand_sub">дополнительное образование</span>
+      </a>
+      <!-- <a href="#" class="btn d-flex justify-content-center login" role="button" aria-disabled="true" data-bs-toggle="modal" data-bs-target="#authorization">
+        <i class='bx bx-user login-img'></i>
+        Войти
+      </a> -->
+      <a href="#" class="btn" role="button" aria-disabled="true">
+        
+      
+      
+
+  </nav>
+</header>
+
+<div class="container-fluid mt-5">
+    <div class="row align-items-center mx-lg-5 px-lg-5">
+        <div class="col-12">
+          {% if name %}
+            <h2 class="text-center">{{ name }}, Ваша запись на кружок "{{ section }}" принята.</h2>
+            <i class="bx bx-check-circle text-center fs-1 text-success my-5 py-5"></i>
+            <h2 class="text-center">Педагог свяжется с Вами в ближайшее время</h2>
+          {% else %}
+            <h2 class="text-center mx-lg-5 px-lg-5">Вы попали сюда случайно</h2>
+            <i class="bx bx-run text-center fs-1 text-success my-5 py-5 mx-lg-5 px-lg-5 text-center"></i>
+          {% endif %}
+        </div>
+    </div>
+    <div class="row align-items-end">
+        <div class="col-12 d-grid gap-2">
+            <a href="{% url 'index' %}" class="btn btn-success" type="button">Вернуться на главную</a>
+        </div>
+    </div>
+</div>
+<!-- <h2 class="mt-5">{{ name }}, Ваша запись на кружок {{ section }} принята</h1> -->
+<!-- <div class="d-grid gap-2">
+  <button class="btn btn-primary" type="button">Вернуться на главную</button>
+</div> -->
+{% endblock %}
+
+
+

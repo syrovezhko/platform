@@ -1,0 +1,104 @@
+<div class="container card-container">
+  <div class="row justify-content-center itoms">
+    <!-- Карточка -->
+    <div class="col-12">
+      <div class="card card-cv">
+        <img src="img/profile.jpg" class="card-img-top card-img card-img_cv" alt="profile">
+        <div class="card-body card-body_cv">          
+          <h5 class="card-title card-name-first">Николай Алексеевич</h5>
+          <h6 class="card-subtitle mb-2 text-muted card-name-second">Сыровежко</h6>
+
+        <div class="card-btn-contact">
+          <button type="button" class="mx-3 btn btn-outline-dark card-btn-cv_btn">
+            <i class='bx bx-lg bxl-whatsapp'></i>
+          </button>
+          <button type="button" class="mx-3 btn btn-outline-dark card-btn-cv_btn">
+            <i class='bx bx-lg bxl-telegram'></i>
+          </button>
+          <button type="button" class="mx-3 btn btn-outline-dark card-btn-cv_btn">
+            <i class='bx bx-lg bx-envelope'></i>
+          </button>
+        </div>
+        <div class="card-btn-about">
+          <button
+          type="button"
+          class="mx-3 btn btn-outline-dark card-btn-about_btn"
+          data-bs-toggle="modal"
+          data-bs-target="#CVModal_id"
+          >
+            Подробнее
+          </button>      
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+    class="modal fade" 
+    id="CVModal_id" 
+    tabindex="-1" 
+    aria-labelledby="exampleModalLabel" 
+    aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered  modal-dialog-scrollable modal-xl modal-fullscreen-lg-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">О педагоге</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid modal-cv">
+          <div class="row justify-content-between modal-cv-header p-0">
+            <div class="col-xl-8 col-lg-7 col-md-6 order-md-1 order-2  modal-cv-header_desc">
+              <h5 class="modal-cv-header_header">
+                Николай Алексеевич Сыровежко
+              </h5>
+              <div class="modal-cv-header_contacts">
+                <button type="button" class="btn btn-outline-dark modal-cv-header_contacts__btn">
+                  <i class='bx bx-lg bxl-whatsapp'></i>
+                </button>
+                <button type="button" class="btn btn-outline-dark modal-cv-header_contacts__btn">
+                  <i class='bx bx-lg bxl-telegram'></i>
+                </button>
+                <button type="button" class="btn btn-outline-dark modal-cv-header_contacts__btn">
+                  <i class='bx bx-lg bx-envelope'></i>
+                </button>
+                <button type="button" class="btn btn-outline-dark modal-cv-header_contacts__btn">
+                  <i class='bx bx-lg bx-phone-call'></i>
+                </button>
+              </div>
+              <div class="modal-cv-header_education">
+                <h6 class="modal-cv-header_education__title">Образование:</h6>
+                <p class="modal-cv-header_education__name"> МАИ (самолето - и верталетостроение)</p>
+                <span class="modal-cv-header_education__year">Окончил(а) в 2018г.</span>
+                
+              </div>
+              <div class="modal-cv-header_education">
+                <h6 class="modal-cv-header_education__title">Педагогическое образование:</h6>
+                <p class="modal-cv-header_education__name">Какая-то шарага (Информатика в общеобразовательных организациях и организациях профессионального образования)</p>
+                <span class="modal-cv-header_education__year">Окончил(а) в 2019г.</span>
+                
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-5 col-md-6 order-md-2 order-1  modal-cv-header_profile mb-3">
+              <img src="img/profile.jpg" alt="" class="modal-cv-header_profile__img w-100">
+            </div>
+            <div class="col modal-cv-header_stack order-3">
+              <div class="modal-cv-header_stack__title mb-2">Преподает:
+              </div>
+              <span class="modal-cv-header_stack__itom">Python</span>
+              <span class="modal-cv-header_stack__itom">Web-разработка</span>
+              <span class="modal-cv-header_stack__itom">3D-моделирование</span>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        <button type="button" class="btn btn-outline-secondary">Примеры работ</button>
+      </div>
+    </div>
+  </div>
+</div>

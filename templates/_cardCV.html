@@ -1,0 +1,118 @@
+{% load static %}
+{% for teachers in teachers_list %}
+<div class="col">
+  <div class="container card-container">
+    <div class="row justify-content-center itoms">
+      <!-- Карточка -->
+      <div class="col-12">
+        <div class="card card-cv">
+          <img src="{{ teachers.teachersCard_img.url }}" class="card-img-top card-img card-img_cv" alt="profile">
+          <div class="card-body card-body_cv">          
+            <h5 class="card-title card-name-first">{{ teachers.teachersCard_name }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted card-name-second">{{ teachers.teachersCard_lname }}</h6>
+
+          <div class="card-btn-contact">
+            <a href="https://wa.me/7{{ teachers.teachersCard_phone }}" type="button" class="mx-3 btn btn-outline-dark card-btn-cv_btn">
+              <i class='bx bx-lg bxl-whatsapp'></i>
+            </a>
+            <a href="https://t.me/{{ teachers.teachersCard_tg }}" type="button" class="mx-3 btn btn-outline-dark card-btn-cv_btn">
+              <i class='bx bx-lg bxl-telegram'></i>
+            </a>
+            <a href="mailto:{{ teachers.teachersCard_email }}?subject=Вопрос с образовательной платформы&body=Вопрос по теме: (удалите лишнее) {{ teachers.teachersCard_subject1 }} {{ teachers.teachersCard_subject2 }} {{ teachers.teachersCard_subject3 }} {{ teachers.teachersCard_subject4 }} {{ teachers.teachersCard_subject5 }} {{ teachers.teachersCard_subject6 }} {{ teachers.teachersCard_subject7 }} {{ teachers.teachersCard_subject8 }} {{ teachers.teachersCard_subject9 }} {{ teachers.teachersCard_subject10 }} {{ teachers.teachersCard_subject11 }}" type="button" class="mx-3 btn btn-outline-dark card-btn-cv_btn">
+              <i class='bx bx-lg bx-envelope'></i>
+            </a>
+          </div>
+          <div class="card-btn-about">
+            <button
+            type="button"
+            class="mx-3 btn btn-outline-dark card-btn-about_btn"
+            data-bs-toggle="modal"
+            data-bs-target="#CVModal_{{ teachers.id }}"
+            >
+              Подробнее
+            </button>      
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div
+      class="modal fade" 
+      id="CVModal_{{ teachers.id }}" 
+      tabindex="-1" 
+      aria-labelledby="exampleModalLabel" 
+      aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered  modal-dialog-scrollable modal-xl modal-fullscreen-lg-down">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">О педагоге</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid modal-cv">
+            <div class="row justify-content-between modal-cv-header p-0">
+              <div class="col-xl-8 col-lg-7 col-md-6 order-md-1 order-2  modal-cv-header_desc">
+                <h5 class="modal-cv-header_header">
+                  {{ teachers.teachersCard_name }} {{ teachers.teachersCard_lname }}
+                </h5>
+                <div class="modal-cv-header_contacts">
+                  <a href="https://wa.me/7{{ teachers.teachersCard_phone }}" type="button" class="btn btn-outline-dark modal-cv-header_contacts__btn">
+                    <i class='bx bx-lg bxl-whatsapp'></i>
+                  </a>
+                  <a href="https://t.me/{{ teachers.teachersCard_tg }}" type="button" class="btn btn-outline-dark modal-cv-header_contacts__btn">
+                    <i class='bx bx-lg bxl-telegram'></i>
+                  </a>
+                  <a href="mailto:{{ teachers.teachersCard_email }}?subject=Вопрос с образовательной платформы&body=Вопрос по теме: (удалите лишнее) {{ teachers.teachersCard_subject1 }} {{ teachers.teachersCard_subject2 }} {{ teachers.teachersCard_subject3 }} {{ teachers.teachersCard_subject4 }} {{ teachers.teachersCard_subject5 }} {{ teachers.teachersCard_subject6 }} {{ teachers.teachersCard_subject7 }} {{ teachers.teachersCard_subject8 }} {{ teachers.teachersCard_subject9 }} {{ teachers.teachersCard_subject10 }} {{ teachers.teachersCard_subject11 }}" type="button" class="btn btn-outline-dark modal-cv-header_contacts__btn">
+                    <i class='bx bx-lg bx-envelope'></i>
+                  </a>
+                  <a href="tel:+7{{ teachers.teachersCard_phone }}" type="button" class="btn btn-outline-dark modal-cv-header_contacts__btn">
+                    <i class='bx bx-lg bx-phone-call'></i>
+                  </a>
+                </div>
+                <!-- degree1 -->
+                <div class="modal-cv-header_education">
+                  <h6 class="modal-cv-header_education__title">Образование:</h6>
+                  <p class="modal-cv-header_education__name">{{ teachers.teachersCard_degree1 }}</p>
+                  <span class="modal-cv-header_education__year">{{ teachers.teachersCard_degreeYear1 }}</span>
+                </div>
+
+                <div class="modal-cv-header_education">
+                  <h6 class="modal-cv-header_education__title">Педагогическое образование:</h6>
+                  <p class="modal-cv-header_education__name">{{ teachers.teachersCard_teacherDegree1 }}</p>
+                  <span class="modal-cv-header_education__year">{{ teachers.teachersCard_teacherDegreeYear1 }}</span>
+                  
+                </div>
+              </div>
+              <div class="col-xl-4 col-lg-5 col-md-6 order-md-2 order-1  modal-cv-header_profile mb-3">
+                <img src="{{ teachers.teachersCard_img.url }}" alt="" class="modal-cv-header_profile__img w-100">
+              </div>
+              <div class="col modal-cv-header_stack order-3">
+                <div class="modal-cv-header_stack__title mb-2">Преподает:
+                </div>
+                <span class="p-1">{{ teachers.teachersCard_subject1 }}</span>
+                <span class="p-1">{{ teachers.teachersCard_subject2 }}</span>
+                <span class="p-1">{{ teachers.teachersCard_subject3 }}</span>
+                <span class="p-1">{{ teachers.teachersCard_subject4 }}</span>
+                <span class="p-1">{{ teachers.teachersCard_subject5 }}</span>
+                <span class="p-1">{{ teachers.teachersCard_subject6 }}</span>
+                <span class="p-1">{{ teachers.teachersCard_subject7 }}</span>
+                <span class="p-1">{{ teachers.teachersCard_subject8 }}</span>
+                <span class="p-1">{{ teachers.teachersCard_subject9 }}</span>
+                <span class="p-1">{{ teachers.teachersCard_subject10 }}</span>
+                <span class="p-1">{{ teachers.teachersCard_subject11 }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+          <!-- <button type="button" class="btn btn-outline-secondary">Примеры работ</button> -->
+        </div>
+      </div>
+    </div>
+  </div>    
+</div>
+{% endfor %}
+
